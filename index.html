@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5f0">
+  <title>Study Timer — Bar Prep</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">§</span><span>BAR STUDY<span class="brand-sub">FOCUS ROOM</span></span></a>
+    <nav><a class="nav-link active" href="index.html">Timer</a><a class="nav-link" href="history.html">Study history</a></nav>
+  </header>
+
+  <main class="page">
+    <section class="intro">
+      <p class="eyebrow">YOUR BAR EXAM PREP SPACE</p>
+      <h1>One session at a time.</h1>
+      <p class="subtitle">Choose your focus block, settle in, and make today's study count.</p>
+    </section>
+
+    <section class="timer-layout">
+      <div class="timer-panel panel">
+        <div class="mode-label"><span class="status-dot"></span><span id="modeLabel">FOCUS SESSION</span></div>
+        <div class="timer-wrap" id="timerWrap" aria-label="Study countdown timer">
+          <svg class="timer-ring" viewBox="0 0 280 280" aria-hidden="true">
+            <circle class="ring-track" cx="140" cy="140" r="126"></circle>
+            <circle class="ring-progress" id="ringProgress" cx="140" cy="140" r="126"></circle>
+          </svg>
+          <div class="timer-center">
+            <div class="timer-time" id="timeDisplay">25:00</div>
+            <div class="timer-caption" id="timerCaption">READY WHEN YOU ARE</div>
+          </div>
+        </div>
+
+        <div class="timer-controls">
+          <button class="button button-primary" id="startPauseBtn">Start focus</button>
+          <button class="button button-secondary" id="resetBtn">Reset</button>
+        </div>
+        <p class="timer-note" id="timerNote">Completed sessions are automatically added to your study history.</p>
+      </div>
+
+      <aside class="side-panel">
+        <div class="panel preset-panel">
+          <div class="section-heading"><div><p class="eyebrow">SET YOUR PACE</p><h2>Focus length</h2></div><span class="heading-icon">◷</span></div>
+          <div class="preset-buttons">
+            <button class="preset selected" data-minutes="25"><span>25</span><small>MINUTES</small></button>
+            <button class="preset" data-minutes="50"><span>50</span><small>MINUTES</small></button>
+          </div>
+          <form id="customForm" class="custom-form">
+            <label for="customMinutes">Custom duration</label>
+            <div class="custom-input-row">
+              <input id="customMinutes" type="number" min="1" max="600" placeholder="e.g. 35" inputmode="numeric">
+              <button class="button button-small" type="submit">Set time</button>
+            </div>
+            <p class="input-hint">Enter any duration from 1 to 600 minutes.</p>
+          </form>
+        </div>
+
+        <div class="panel today-panel">
+          <p class="eyebrow">TODAY AT A GLANCE</p>
+          <div class="today-number"><span id="todayMinutes">0</span><small>min</small></div>
+          <p class="today-label">focused today</p>
+          <div class="mini-divider"></div>
+          <div class="today-bottom"><span>Sessions completed</span><strong id="todaySessions">0</strong></div>
+          <a class="text-link" href="history.html">View study history <span>↗</span></a>
+        </div>
+      </aside>
+    </section>
+    <footer class="footer-note">A little progress, repeated daily. <span>Keep going.</span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

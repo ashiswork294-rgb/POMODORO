@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5f0">
+  <title>Study History — Bar Prep</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">§</span><span>BAR STUDY<span class="brand-sub">FOCUS ROOM</span></span></a>
+    <nav><a class="nav-link" href="index.html">Timer</a><a class="nav-link active" href="history.html">Study history</a></nav>
+  </header>
+
+  <main class="page history-page">
+    <section class="intro history-intro">
+      <p class="eyebrow">CONSISTENCY OVER INTENSITY</p>
+      <h1>Your effort, kept in one place.</h1>
+      <p class="subtitle">Every completed focus session appears here, so you can see your study habit taking shape.</p>
+    </section>
+
+    <section class="stats-grid">
+      <article class="panel stat-card"><p class="eyebrow">TOTAL STUDY TIME</p><div class="stat-value"><span id="totalMinutes">0</span><small>min</small></div><p class="stat-foot">Across all recorded sessions</p></article>
+      <article class="panel stat-card"><p class="eyebrow">SESSIONS COMPLETED</p><div class="stat-value" id="totalSessions">0</div><p class="stat-foot">Every finish counts</p></article>
+      <article class="panel stat-card"><p class="eyebrow">THIS WEEK</p><div class="stat-value"><span id="weekMinutes">0</span><small>min</small></div><p class="stat-foot">Since Monday</p></article>
+    </section>
+
+    <section class="panel history-panel">
+      <div class="history-heading"><div><p class="eyebrow">YOUR RECORD</p><h2>Daily study log</h2></div><button class="button button-secondary button-small" id="exportBtn">Export CSV ↓</button></div>
+      <div id="dailyList" class="daily-list"></div>
+      <div id="emptyState" class="empty-state" hidden><div class="empty-icon">✎</div><h3>Your first session starts here.</h3><p>Head to the timer, complete a focus session, and your study log will show up here.</p><a class="button button-primary" href="index.html">Go to timer</a></div>
+      <div class="history-actions"><button class="quiet-button" id="clearBtn">Clear all study history</button><p>Records are stored in this browser on this device.</p></div>
+    </section>
+    <footer class="footer-note">Small steps add up. <span>Keep showing up.</span></footer>
+  </main>
+  <script src="history.js"></script>
+</body>
+</html>
